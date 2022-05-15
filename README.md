@@ -2,7 +2,7 @@
 
 Windows 
 ```
-   npm install;npm start
+   npm install;npm run start
 ```
 Bash
 ```
