@@ -1,4 +1,7 @@
-#### Setup
+#### Swagger UI Documentation
+## [Jobs API](https://jobs-api-1407.herokuapp.com/api-docs/)
+
+#### Setup 
 
 Windows 
 ```
@@ -6,7 +9,7 @@ Windows
 ```
 Bash
 ```
-   npm install && npm start
+   npm install && npm run start
 ```
 
 #### Database Connection
@@ -60,15 +63,4 @@ Email Validation Regex
 - xss-clean
 - express-rate-limit
 
-Swagger UI
 
-```yaml
-/jobs/{id}:
-  parameters:
-    - in: path
-      name: id
-      schema:
-        type: string
-      required: true
-      description: the job id
-```

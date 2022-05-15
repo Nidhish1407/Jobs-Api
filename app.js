@@ -12,6 +12,11 @@ const cors = require('cors');
 const xss = require('xss-clean');
 const rateLimiter = require('express-rate-limit');
 
+//Swagger
+const swaggerUI = require('swagger-ui-express');
+const yaml = require('yamljs');
+const swaggerDoc = yaml.load('./swagger.yaml');
+
 
 //routers
 const authRouter = require('./routes/auth');
@@ -46,8 +51,15 @@ app.use(rateLimiter({
 }))
 
 
+
+
+
+
 //routes
-//app.use('/', (req, res) => { res.redirect('/api/v1/auth/login')});
+app.get('/', (req, res) => {
+  res.send("<h1>Jobs API</h1><a href='/api-docs'>Documentaion</a>")
+});
+app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerDoc));
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/jobs', authenticateUser, jobsRouter);
 
