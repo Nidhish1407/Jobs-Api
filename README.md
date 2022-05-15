@@ -1,7 +1,12 @@
 #### Setup
 
-```Windows 
-   npm run start
+Windows 
+```
+   npm install;npm start
+```
+Bash
+```
+   npm install && npm start
 ```
 
 #### Database Connection
